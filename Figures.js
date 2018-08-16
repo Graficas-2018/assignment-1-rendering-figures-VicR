@@ -215,7 +215,7 @@ function createRhombus(gl) {
   return rhombus;
 }
 
-function createPacman(gl, radius, triangles) {
+function createPacman(gl, radius) {
   var vertexBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
   var verts = [0,0,0];

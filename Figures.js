@@ -171,10 +171,8 @@ function draw(gl, obj)
 }
 
 // TO DO: Create functions needed to generate the vertex data for the different figures.
-function createSquare(gl)
-{
-  var vertexBuffer;
-  vertexBuffer = gl.createBuffer();
+function createSquare(gl) {
+  var vertexBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
   var verts = [
       .5,  .5,  0.0,
@@ -188,10 +186,8 @@ function createSquare(gl)
   return square;
 }
 
-function createTriangle(gl)
-{
-  var vertexBuffer;
-  vertexBuffer = gl.createBuffer();
+function createTriangle(gl) {
+  var vertexBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
   var verts = [
       0.0, 0.5, 0.0,
@@ -204,10 +200,8 @@ function createTriangle(gl)
   return triangle;
 }
 
-function createRhombus(gl)
-{
-  var vertexBuffer;
-  vertexBuffer = gl.createBuffer();
+function createRhombus(gl) {
+  var vertexBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
   var verts = [
     0.5, 0, 0.0,
@@ -221,8 +215,18 @@ function createRhombus(gl)
   return rhombus;
 }
 
-function createSphere(gl, radius)
-{
-    var sphere = {};
-    return sphere;
+function createPacman(gl, radius, triangles) {
+  var vertexBuffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+  var verts = [0,0,0];
+  var i = 25;
+  for(i; i < 320; i += 5){
+    verts.push(0.5 * Math.cos(i * (Math.PI / 180)));
+    verts.push(0.5 * Math.sin(i * (Math.PI / 180)));
+    verts.push(0);
+  }
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(verts), gl.STATIC_DRAW);
+
+  var pacman = {buffer:vertexBuffer, vertSize:3, nVerts:verts.length/3, primtype:gl.TRIANGLE_FAN};
+  return pacman;
 }

@@ -19,7 +19,7 @@
 
 		    var square = createSquare(gl);
 		    var triangle = createTriangle(gl);
-		    var sphere = createSphere(gl, 0.5);
+		    var pacman = createPacman(gl, 0.5, 100);
 		    var rhombus = createRhombus(gl);
 
 				mat4.identity(modelViewMatrix);
@@ -33,6 +33,10 @@
 				mat4.identity(modelViewMatrix);
 				mat4.translate(modelViewMatrix, modelViewMatrix, [-1.0, -0.6, -3.333]);
 				draw(gl, rhombus);
+
+				mat4.identity(modelViewMatrix);
+				mat4.translate(modelViewMatrix, modelViewMatrix, [1, -0.6, -3.333]);
+				draw(gl, pacman);
 			});
 		</script>
 	</head>

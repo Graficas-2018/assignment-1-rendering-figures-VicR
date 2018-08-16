@@ -1,8 +1,8 @@
 # Assignment 1: Rendering Figures
 
-Assignment No 1 for the computer graphics course. Modify previous code examples to render a square, triangle, rhombus, and sphere as shown in Figure 1.
+Assignment No 1 for the computer graphics course. Modify previous code examples to render a square, triangle, rhombus, and pacman as shown in Figure 1.
 
-![Figure 1](Images/triangle_box_sphere_rhombus.png)
+![Figure 1](Images/triangle_box_pacman_rhombus.png)
 <br/>Figure 1: Expected render.
 
 Rubric:
